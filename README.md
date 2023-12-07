@@ -14,3 +14,17 @@
  - create redux store with userslice
  - Implement Sign out
  - update profile
+ - bugfix-sign up user profile picture and display name update
+ - bugfix- if user is logged in redirect to /browse or vise versa
+ - unsuscribe Oauth
+ - put all URL in constants 
+ - register on tmdb webstie to get access tokens and api
+ - create movieSlice to store movie data in redux store
+ - create custom hook nowPlaying Movies to make cleaner code
+ - planning for main container & secondary container
+ - create MainContainer component which have VideoTitle and VideoBackground Component
+ - fetch trailer data from video API
+ - store trailer  to movieSlice Store
+ - create customHook for fetchTrailer to make code cleaner
+ - Embedd the you tube video and make autoplay and mute
+ - Tailwind css to make main container awesome

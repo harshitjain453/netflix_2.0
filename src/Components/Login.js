@@ -1,15 +1,15 @@
 import React, { useState, useRef, } from 'react'
-import { useNavigate } from 'react-router-dom';
 import Header from './Header'
 import { checkValidate } from '../utils/checkValidate';
 import { createUserWithEmailAndPassword, signInWithEmailAndPassword, updateProfile } from "firebase/auth";
 import { auth } from '../utils/firebase'
 import { useDispatch } from 'react-redux';
-import { addUser, removeUser } from '../utils/userSlice';
+import { addUser } from '../utils/userSlice';
+import { LOGO_URL, COVER_URL, PHOTO_URL } from '../utils/constants';
 
 
 const Login = () => {
-    const nevigate = useNavigate();
+   
     const dispatch = useDispatch();
     const [isSignInForm, setIsSignInForm] = useState(true);
 
@@ -37,12 +37,12 @@ const Login = () => {
                     // Signed up 
                     const user = userCredential.user;
                     updateProfile(auth.currentUser, {
-                        displayName: name.current.value, photoURL: "https://lh3.googleusercontent.com/a/ACg8ocIS6HOxPvMUglUYxCm0jZFVP7bsoIjmp2oGAc11fI_2oS_u=s360-c-no"
+                        displayName: name.current.value, photoURL: PHOTO_URL
                     }).then(() => {
                         // Profile updated!
                         const { uid, email, displayName, photoURL } = auth.currentUser;
                         dispatch(addUser({ uid: uid, email: email, displayName: displayName, photoURL: photoURL }))
-                        nevigate("/browse")
+                    
                         // ...
                     }).catch((error) => {
                         // An error occurred
@@ -67,7 +67,7 @@ const Login = () => {
                     // Signed in 
                     const user = userCredential.user;
                     console.log(user)
-                    nevigate("/browse")
+                  
                 })
                 .catch((error) => {
                     const errorCode = error.code;
@@ -85,7 +85,7 @@ const Login = () => {
         <div>
             <Header />
             <div className='absolute'>
-                <img src="https://assets.nflxext.com/ffe/siteui/vlv3/c906271d-7184-4eec-83c9-b6d4c1a068ec/728874a6-eeda-400a-9bcf-a935a1408a4f/IN-en-20231127-popsignuptwoweeks-perspective_alpha_website_large.jpg" alt="cover" />
+                <img src={COVER_URL} alt="cover" />
             </div>
 
 
