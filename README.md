@@ -28,3 +28,7 @@
  - create customHook for fetchTrailer to make code cleaner
  - Embedd the you tube video and make autoplay and mute
  - Tailwind css to make main container awesome
+ - Build Secondary Component
+ - Build MovieList and MovieCard Component
+ - fetch img_cdn url from tmdb website
+ 

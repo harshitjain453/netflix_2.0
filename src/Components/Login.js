@@ -5,7 +5,7 @@ import { createUserWithEmailAndPassword, signInWithEmailAndPassword, updateProfi
 import { auth } from '../utils/firebase'
 import { useDispatch } from 'react-redux';
 import { addUser } from '../utils/userSlice';
-import { LOGO_URL, COVER_URL, PHOTO_URL } from '../utils/constants';
+import { COVER_URL, PHOTO_URL } from '../utils/constants';
 
 
 const Login = () => {
@@ -82,7 +82,7 @@ const Login = () => {
 
     }
     return (
-        <div>
+        <div >
             <Header />
             <div className='absolute'>
                 <img src={COVER_URL} alt="cover" />
